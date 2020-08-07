@@ -1,0 +1,53 @@
+CREATE TABLE nome_tabela
+(
+    nome_coluna tipo [restrições],
+    nome_coluna tipo [restrições],
+    ...
+);
+
+
+CREATE TABLE nome_table (
+  nome_coluna tipo_dado CHECK condicao
+);
+
+CREATE TABLE conta (
+  numero int UNIQUE,
+  agencia int NOT NULL,
+  saldo float NOT NULL DEFAULT 0,
+  limite float NOT NULL DEFAULT 500.00,
+  cartao varchar(3) NOT NULL DEFAULT 'Não'
+);
+
+CREATE TABLE produtos (
+  id_produto integer PRIMARY KEY,
+  nome       text,
+  preco      numeric
+);
+
+CREATE TABLE pedidos (
+    id_pedido integer PRIMARY KEY,
+    id_produto integer,
+    quantidade integer,
+    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto)
+);
+
+INSERT INTO nome_tabela (nome_coluna1, ...) VALUES (valor 1, ...);
+
+
+SELECT coluna1,coluna2,coluna3,... colunaN FROM nome_tabela [WHERE condição];
+
+CREATE FUNCTION nome ([parâmetros[...]])
+    RETURNS tipo
+    Instruções da função
+	
+	
+CREATE VIEW view_name
+AS select_statement
+
+
+CREATE [OR REPLACE] PROCEDURE [schema.]nome_procedure
+     [(parâmetro1 tipo1, parâmetro2 tipo2, ...)]
+IS|AS
+BEGIN
+/* Bloco de instruções */
+END;
